@@ -1,5 +1,7 @@
 package app;
 
+import algorithms.Linear;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -17,8 +19,9 @@ public class Main {
         System.out.print("Choose a number to search in the array: ");
         int search = sc.nextInt();
 
+        Linear.search(array, search);
 
-
+        System.out.println("The array is: " + array);
 
         sc.close();
     }
@@ -40,6 +43,18 @@ public class Main {
             int temp = array.get(i);
             array.set(i, array.get(random));
             array.set(random, temp);
+        }
+    }
+
+    public static void bubbleSort(ArrayList<Integer> array){
+        for(int i = 0; i < array.size(); i++){
+            for(int j = 0; j < array.size() - 1; j++){
+                if(array.get(j) > array.get(j + 1)){
+                    int temp = array.get(j);
+                    array.set(j, array.get(j + 1));
+                    array.set(j + 1, temp);
+                }
+            }
         }
     }
 }
