@@ -1,5 +1,6 @@
 package app;
 
+import algorithms.Binary;
 import algorithms.Linear;
 
 import java.util.ArrayList;
@@ -16,13 +17,28 @@ public class Main {
         populateArray(array);
         shuffleArray(array);
 
-        System.out.print("Choose a number to search in the array: ");
+        System.out.print("Choose a number to search in the array using linear search: ");
         int search = sc.nextInt();
+        sc.nextLine();
 
         Linear.search(array, search);
 
         System.out.println("The array is: " + array);
 
+        System.out.println("Now, let's sort the array using bubble sort algorithm");
+        waitForEnter(sc);
+        bubbleSort(array);
+
+        System.out.println("Enter a number to search using binary search algorithm: ");
+        search = sc.nextInt();
+        sc.nextLine();
+
+        Binary.search(array, search);
+
+        System.out.println("The array is: " + array);
+
+        System.out.println("Thanks for using this application!");
+        waitForEnter(sc);
         sc.close();
     }
 
